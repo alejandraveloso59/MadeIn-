@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Made In — Variable Typeface</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="dark">
+  <header class="header">
+    <div class="header-left">
+      <a href="index.html" class="header-link active-page">MADE IN VARIABLE</a>
+    </div>
+    <div class="header-center">
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">☾</button>
+    </div>
+    <div class="header-right">
+      <a href="interactive-page.html" class="header-link">MADE IN INTERACTIVA</a>
+    </div>
+  </header>
+
+  <main class="page">
+    <!-- FULLSCREEN BANNER (marquee) -->
+    <section id="banner" class="banner" aria-hidden="true">
+      <div class="banner-viewport">
+        <div class="banner-track" id="bannerTrack">
+          <!-- original sequence -->
+          <span class="banner-letter">A</span>
+          <span class="banner-letter">M</span>
+          <span class="banner-letter">F</span>
+          <span class="banner-letter">S</span>
+          <span class="banner-letter">X</span>
+          <span class="banner-letter">L</span>
+          <span class="banner-letter">T</span>
+          <!-- duplicated sequence for seamless loop -->
+          <span class="banner-letter">A</span>
+          <span class="banner-letter">M</span>
+          <span class="banner-letter">F</span>
+          <span class="banner-letter">S</span>
+          <span class="banner-letter">X</span>
+          <span class="banner-letter">L</span>
+          <span class="banner-letter">T</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="separator"></section>
+
+    <!-- INTRO / TITULO -->
+    <section class="intro">
+      <h1 class="project-title">Made In variable</h1>
+      <p>
+        Made In es una tipografía experimental variable que critica la industria
+        <strong>fast-fashion</strong>, uno de los sectores más contaminantes 
+        del planeta. Genera residuos textiles masivos. Promueve un consumo acelerado donde las prendas son de usar y tirar. Esta tipografia variable con su eje <strong>Unravel (UNRV)</strong> visualiza cómo la tipografía
+        se deshilacha progresivamente, casi tan rápido como las prendas producidas en masa. Esta es una de las muchas formas de desgaste que puede padecer una prenda. Genera un lenguaje visual que no embellece la moda, sino que denuncia su impacto social.
+      </p>
+    </section>
+
+    <section class="separator"></section>
+
+    <!-- DEMO INTERACTIVA (fullscreen feel) -->
+    <section class="interactive">
+      <h2 class="visually-hidden">Probar tipografía</h2>
+
+      <input id="textInput" class="text-input" type="text" maxlength="40" value="MADE IN" />
+
+      <div class="control-row">
+        <label class="control">
+          Tamaño
+          <input id="sizeSlider" type="range" min="50" max="420" value="250" />
+        </label>
+
+        <label class="control">
+          Unravel (UNRV)
+          <input id="unravelSlider" type="range" min="0" max="500" value="0" />
+        </label>
+
+        <label class="control">
+          Color
+          <div class="color-control" id="colorControl"></div>
+        </label>
+
+        <div class="controls-buttons">
+          <button id="playBtn">Auto-loop</button>
+          <button id="resetBtn">Reset</button>
+        </div>
+      </div>
+
+      <div id="sample" class="sample" aria-live="polite">MADE IN</div>
+    </section>
+
+    <section class="separator"></section>
+
+    <!-- VARIACIONES / GRID -->
+    <section class="weights">
+      <h2 class="weights-title">Variaciones — UNRV</h2>
+
+      <div class="weight-block">
+        <h3>Regular — 0</h3>
+        <div class="alphabet-grid" style="font-variation-settings: 'UNRV' 0;">
+          <!-- long string but will layout as grid -->
+          A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+        </div>
+      </div>
+
+      <div class="weight-block">
+        <h3>Light — 250</h3>
+        <div class="alphabet-grid" style="font-variation-settings: 'UNRV' 250;">
+          A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+        </div>
+      </div>
+
+      <div class="weight-block">
+        <h3>Thin — 500</h3>
+        <div class="alphabet-grid" style="font-variation-settings: 'UNRV' 500;">
+          A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app/theme-toggle.js"></script>
+  <script src="app/main.js"></script>
+</body>
+</html>

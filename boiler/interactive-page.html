@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Made In — Tipografía Interactiva</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+</head>
+<body class="dark">
+  <header class="header">
+    <div class="header-left">
+      <a href="index.html" class="header-link">MADE IN VARIABLE</a>
+    </div>
+    <div class="header-center">
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">☾</button>
+    </div>
+    <div class="header-right">
+      <a href="interactive-page.html" class="header-link active-page">MADE IN INTERACTIVA</a>
+    </div>
+  </header>
+
+  <main class="interactive-page">
+    <section class="interactive-section">
+      <h1 class="interactive-title">Made In interactiva</h1>
+      <p class="interactive-description">
+        Explora la tipografía Made In de forma <strong>interactiva</strong>. Mueve tu cursor sobre el lienzo y ajusta los 
+        controles para <strong>crear pelotillas, estirar, encoger o desgastar</strong> los hilos de las letras en tiempo real. Hay muchos 
+        tipos de desgaste en una prenda como las famosas pelotillas, el estiramiento por tensión o uso, el adelgazamiento de los hilos por pérdida de fibras o el encogimiento por 
+        lavados agresivos. ¡Prueba, diviértete y descarga tus creaciones!
+      </p>
+
+      <div class="interactive-container">
+        <!-- Sidebar Controls -->
+        <aside class="interactive-sidebar">
+          <div class="control-group">
+            <label for="letterInput">Letra:</label>
+            <input type="text" id="letterInput" maxlength="1" value="a" />
+          </div>
+
+          <div class="control-group">
+            <label for="stretchIntensitySlider">Intensidad Estiramiento:</label>
+            <div class="slider-container">
+              <input type="range" id="stretchIntensitySlider" min="0" max="3" step="0.1" value="1.0" />
+              <span class="slider-value" id="stretchIntensityValue">1.0</span>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label for="shrinkIntensitySlider">Intensidad Encogimiento:</label>
+            <div class="slider-container">
+              <input type="range" id="shrinkIntensitySlider" min="0" max="3" step="0.1" value="0.0" />
+              <span class="slider-value" id="shrinkIntensityValue">0.0</span>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+              <label for="particleIntensitySlider" style="margin: 0;">Pelotillas:</label>
+              <div id="particleColorSelectionContainer" class="color-selection" style="display: flex; gap: 4px;"></div>
+            </div>
+            <div class="slider-container">
+              <input type="range" id="particleIntensitySlider" min="0" max="2" step="0.1" value="0.0" />
+              <span class="slider-value" id="particleIntensityValue">0.0</span>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label for="strokeWeightSlider">Grosor Hilos:</label>
+            <div class="slider-container">
+              <input type="range" id="strokeWeightSlider" min="1" max="30" step="0.5" value="10" />
+              <span class="slider-value" id="strokeWeightValue">10.0</span>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <label for="colorSelectionContainer" style="margin: 0;">Color de letra:</label>
+              <div id="colorSelectionContainer" class="color-selection" style="display: flex; gap: 4px;"></div>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label for="colorAnimationSpeedSlider">Velocidad Animación Color:</label>
+            <div class="slider-container">
+              <input type="range" id="colorAnimationSpeedSlider" min="0" max="1.5" step="0.01" value="0.07" />
+              <span class="slider-value" id="colorAnimationSpeedValue">0.07</span>
+            </div>
+          </div>
+
+          <div class="control-group capture-section">
+            <label>¡Compra tu letra!</label>
+            <button id="captureCanvasPngBtn" class="capture-button">Descargar PNG</button>
+            <button id="recordVideoBtn" class="capture-button">Grabar Video</button>
+          </div>
+
+          <div class="control-group">
+            <button id="resetBtn" class="reset-button">🗑️ Tira tu letra</button>
+          </div>
+        </aside>
+
+        <!-- Canvas -->
+        <div class="canvas-wrapper">
+          <div class="background-color-control">
+            <label for="backgroundColorInput" style="font-size: 12px; display: block; margin-bottom: 4px;">Color Fondo:</label>
+            <input type="color" id="backgroundColorInput" value="#0f0f0f" style="width: 50px; height: 40px; cursor: pointer; border: none; border-radius: 4px;" />
+          </div>
+          <div id="p5-container" class="p5-canvas-container"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app/theme-toggle.js"></script>
+  <script src="app/interactive-sketch.js"></script>
+</body>
+</html>
